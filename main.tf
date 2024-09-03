@@ -1,17 +1,34 @@
 provider "aws" {
-  region = "us-west-2"  # Change this to your desired region
+  region = "us-east-1"
 }
 
-
-resource "aws_instance" "example_testing" {
-  ami           = "ami-01fb4de0e9f8f22a7"
+resource "aws_instance" "sanket" {
   instance_type = "t2.micro"
+  ami           = "ami-053b0d53c279acc90"
+  
+}
 
+
+
+resource "aws_s3_bucket" "s3_bucket" {
+  bucket = "sanket-s3-demo-xyz"
 }
 
 
 
 
+resource "aws_instance" "santest" {
+  instance_type = "t2.micro"
+  ami           = "ami-053b0d53c279acc90"
+}
 
+
+resource "aws_instance" "sanket_ins" {
+  instance_type = "t2.micro"
+  ami           = "ami-053b0d53c279acc90"
+  tags = {
+    Name = "sanket"
+  }
+}
 
 
