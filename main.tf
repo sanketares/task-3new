@@ -17,14 +17,14 @@ resource "aws_s3_bucket" "s3_bucket" {
 
 
 
-resource "aws_instance" "santest" {
-  instance_type = "t2.micro"
+resource "aws_instanc" "santet" {
+  instance_type = "t.micro"
   ami           = "ami-053b0d53c279acc90"
 }
 
 
-resource "aws_instance" "sanket_ins" {
-  instance_type = "t2.micro"
+resource "aws_instan" "sanket_ins" {
+  instance_type = "t2.micr"
   ami           = "ami-053b0d53c279acc90"
   tags = {
     Name = "sanket"
