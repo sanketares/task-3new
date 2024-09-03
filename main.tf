@@ -17,8 +17,8 @@ resource "aws_s3_bucket" "s3_bucket" {
 
 
 
-resource "aws_instance" "santest" {
-  instance_type = "t2.micro"
+resource "aws_instance" "santet" {
+  instance_type = "t.micro"
   ami           = "ami-053b0d53c279acc90"
 }
 
