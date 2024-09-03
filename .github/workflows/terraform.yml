@@ -41,6 +41,4 @@ jobs:
           echo "Terraform plan failed. Check the logs for more details."
           exit 1
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
