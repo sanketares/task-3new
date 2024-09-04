@@ -35,12 +35,14 @@ jobs:
         continue-on-error: false
 
 
-      - name: Upload Terraform Plan as artifact
+      - name: Check Terraform Plan
         if: failure()
         run: |
           echo "Terraform plan failed. Check the logs for more details."
           exit 1
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Upload Terraform Plan Artifacts
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform-plan
+          path: plan.out
